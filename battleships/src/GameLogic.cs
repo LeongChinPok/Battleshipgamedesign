@@ -7,6 +7,9 @@ using System.Data;
 using System.Diagnostics;
 static class GameLogic
 {
+	/// <summary>
+	/// This is the core of the game which starts the process and call the functions.
+	/// </summary>
 	public static void Main()
 	{
 		//Opens a new Graphics Window
