@@ -119,6 +119,12 @@ public static class GameController
 		SwinGame.RefreshScreen();
 	}
 
+	/// <summary>
+ 	/// This is the action when the player hit the ship.
+ 	/// </summary>
+ 	/// <param name="row">Row.</param>
+ 	/// <param name="column">Column.</param>
+ 	/// <param name="showAnimation">If set to <c>true</c> show animation.</param>
 	private static void PlayHitSequence(int row, int column, bool showAnimation)
 	{
 		if (showAnimation) {
@@ -130,6 +136,12 @@ public static class GameController
 		DrawAnimationSequence();
 	}
 
+	/// <summary>
+ 	/// This is the action when the player miss the ship.
+ 	/// </summary>
+ 	/// <param name="row">Row.</param>
+ 	/// <param name="column">Column.</param>
+ 	/// <param name="showAnimation">If set to <c>true</c> show animation.</param>
 	private static void PlayMissSequence(int row, int column, bool showAnimation)
 	{
 		if (showAnimation) {

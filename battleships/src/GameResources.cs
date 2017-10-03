@@ -9,15 +9,20 @@ using SwinGameSDK;
 
 public static class GameResources
 {
-
+	/// <summary>
+	/// Loads the fonts.
+	/// </summary>
 	private static void LoadFonts()
 	{
+		//Fonts
 		NewFont("ArialLarge", "arial.ttf", 80);
 		NewFont("Courier", "cour.ttf", 14);
 		NewFont("CourierSmall", "cour.ttf", 8);
 		NewFont("Menu", "ffaccess.ttf", 8);
 	}
-
+	/// <summary>
+	/// Loads the images.
+	/// </summary>
 	private static void LoadImages()
 	{
 		//Backgrounds
@@ -44,9 +49,12 @@ public static class GameResources
 		NewImage("Splash", "splash.png");
 
 	}
-
+	/// <summary>
+	/// Loads the sounds.
+	/// </summary>
 	private static void LoadSounds()
 	{
+		//Sounds
 		NewSound("Error", "error.wav");
 		NewSound("Hit", "hit.wav");
 		NewSound("Sink", "sink.wav");
@@ -55,7 +63,9 @@ public static class GameResources
 		NewSound("Winner", "winner.wav");
 		NewSound("Lose", "lose.wav");
 	}
-
+	/// <summary>
+	/// Loads the music.
+	/// </summary>
 	private static void LoadMusic()
 	{
 		NewMusic("Background", "horrordrone.mp3");
@@ -155,7 +165,9 @@ public static class GameResources
 		SwinGame.Delay(100);
 		EndLoadingScreen(width, height);
 	}
-
+	/// <summary>
+	/// Shows the loading screen.
+	/// </summary>
 	private static void ShowLoadingScreen()
 	{
 		_Background = SwinGame.LoadBitmap(SwinGame.PathToResource("SplashBack.png", ResourceKind.BitmapResource));
@@ -172,7 +184,9 @@ public static class GameResources
 
 		PlaySwinGameIntro();
 	}
-
+	/// <summary>
+	/// Plays the SwinGame intro.
+	/// </summary>
 	private static void PlaySwinGameIntro()
 	{
 		const int ANI_X = 143;
@@ -197,7 +211,11 @@ public static class GameResources
 		SwinGame.Delay(1500);
 
 	}
-
+	/// <summary>
+	/// Shows the message.
+	/// </summary>
+	/// <param name="message">Message.</param>
+	/// <param name="number">Number.</param>
 	private static void ShowMessage(string message, int number)
 	{
 		const int TX = 310;
@@ -219,7 +237,11 @@ public static class GameResources
 		SwinGame.RefreshScreen();
 		SwinGame.ProcessEvents();
 	}
-
+	/// <summary>
+	/// Ends the loading screen.
+	/// </summary>
+	/// <param name="width">Width.</param>
+	/// <param name="height">Height.</param>
 	private static void EndLoadingScreen(int width, int height)
 	{
 		SwinGame.ProcessEvents();
