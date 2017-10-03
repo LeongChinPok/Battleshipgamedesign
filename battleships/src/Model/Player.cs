@@ -196,9 +196,7 @@ public class Player : IEnumerable<Ship>
 
 		return result;
 	}
-	/// <summary>
-	/// Randomizes the deployment.
-	/// </summary>
+
 	public virtual void RandomizeDeployment()
 	{
 		bool placementSuccessful = false;
