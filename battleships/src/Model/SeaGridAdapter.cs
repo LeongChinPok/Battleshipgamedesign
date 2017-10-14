@@ -1,4 +1,3 @@
-
 using Microsoft.VisualBasic;
 using System;
 using System.Collections;
@@ -18,10 +17,10 @@ public class SeaGridAdapter : ISeaGrid
 	/// Create the SeaGridAdapter, with the grid, and it will allow it to be changed
 	/// </summary>
 	/// <param name="grid">the grid that needs to be adapted</param>
-	public SeaGridAdapter(SeaGrid grid)
+	public SeaGridAdapter (SeaGrid grid)
 	{
 		_MyGrid = grid;
-		_MyGrid.Changed += new EventHandler(MyGrid_Changed);
+		_MyGrid.Changed += new EventHandler (MyGrid_Changed);
 	}
 
 	/// <summary>
@@ -29,10 +28,10 @@ public class SeaGridAdapter : ISeaGrid
 	/// </summary>
 	/// <param name="sender">the object that caused the change</param>
 	/// <param name="e">what needs to be redrawn</param>
-	private void MyGrid_Changed(object sender, EventArgs e)
+	private void MyGrid_Changed (object sender, EventArgs e)
 	{
 		if (Changed != null) {
-			Changed(this, e);
+			Changed (this, e);
 		}
 	}
 
@@ -44,9 +43,9 @@ public class SeaGridAdapter : ISeaGrid
 	/// <param name="x">tile x coordinate</param>
 	/// <param name="y">tile y coordinate</param>
 	/// <returns>a tile, either what it actually is, or if it was a ship then return a sea tile</returns>
-	public TileView Item {
+	public TileView this [int x, int y] {
 		get {
-			TileView result = _MyGrid.Item(x, y);
+			TileView result = _MyGrid [x, y];
 
 			if (result == TileView.Ship) {
 				return TileView.Sea;
@@ -59,7 +58,7 @@ public class SeaGridAdapter : ISeaGrid
 	/// <summary>
 	/// Indicates that the grid has been changed
 	/// </summary>
-	public event EventHandler ISeaGrid.Changed;
+	public event EventHandler Changed;
 
 	/// <summary>
 	/// Get the width of a tile
@@ -81,17 +80,10 @@ public class SeaGridAdapter : ISeaGrid
 	/// <param name="row">the row its hitting at</param>
 	/// <param name="col">the column its hitting at</param>
 	/// <returns>The result from hitting that tile</returns>
-	public AttackResult HitTile(int row, int col)
+	public AttackResult HitTile (int row, int col)
 	{
-		return _MyGrid.HitTile(row, col);
+		return _MyGrid.HitTile (row, col);
 	}
 	#endregion
 
 }
-
-//=======================================================
-//Service provided by Telerik (www.telerik.com)
-//Conversion powered by NRefactory.
-//Twitter: @telerik
-//Facebook: facebook.com/telerik
-//=======================================================

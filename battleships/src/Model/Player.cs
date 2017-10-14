@@ -1,4 +1,3 @@
-
 using Microsoft.VisualBasic;
 using System;
 using System.Collections;
@@ -12,9 +11,9 @@ using System.Diagnostics;
 public class Player : IEnumerable<Ship>
 {
 
-	protected static Random _Random = new Random();
-	private Dictionary<ShipName, Ship> _Ships = new Dictionary<ShipName, Ship>();
-	private SeaGrid _playerGrid = new SeaGrid(_Ships);
+	protected static Random _Random = new Random ();
+	private Dictionary<ShipName, Ship> _Ships = new Dictionary<ShipName, Ship> ();
+	private SeaGrid _playerGrid;
 	private ISeaGrid _enemyGrid;
 
 	protected BattleShipsGame _game;
@@ -40,18 +39,19 @@ public class Player : IEnumerable<Ship>
 		set { _enemyGrid = value; }
 	}
 
-	public Player(BattleShipsGame controller)
+	public Player (BattleShipsGame controller)
 	{
 		_game = controller;
+		_playerGrid = new SeaGrid (_Ships);
 
 		//for each ship add the ships name so the seagrid knows about them
-		foreach (ShipName name in Enum.GetValues(typeof(ShipName))) {
+		foreach (ShipName name in Enum.GetValues (typeof (ShipName))) {
 			if (name != ShipName.None) {
-				_Ships.Add(name, new Ship(name));
+				_Ships.Add (name, new Ship (name));
 			}
 		}
 
-		RandomizeDeployment();
+		RandomizeDeployment ();
 	}
 
 	/// <summary>
@@ -77,8 +77,8 @@ public class Player : IEnumerable<Ship>
 	}
 
 	public bool IsDestroyed {
-//Check if all ships are destroyed... -1 for the none ship
-		get { return _playerGrid.ShipsKilled == Enum.GetValues(typeof(ShipName)).Length - 1; }
+		//Check if all ships are destroyed... -1 for the none ship
+		get { return _playerGrid.ShipsKilled == Enum.GetValues (typeof (ShipName)).Length - 1; }
 	}
 
 	/// <summary>
@@ -88,13 +88,12 @@ public class Player : IEnumerable<Ship>
 	/// <value>The ship</value>
 	/// <returns>The ship with the indicated name</returns>
 	/// <remarks>The none ship returns nothing/null</remarks>
-	public Ship Ship {
-		get {
-			if (name == ShipName.None)
-				return null;
+	public Ship Ship (ShipName name)
+	{
+		if (name == ShipName.None)
+			return null;
 
-			return _Ships.Item(name);
-		}
+		return _Ships [name];
 	}
 
 	/// <summary>
@@ -134,18 +133,18 @@ public class Player : IEnumerable<Ship>
 	/// has.
 	/// </summary>
 	/// <returns>A Ship enumerator</returns>
-	public IEnumerator<Ship> GetShipEnumerator()
+	public IEnumerator<Ship> GetShipEnumerator ()
 	{
-		Ship[] result = new Ship[_Ships.Values.Count + 1];
-		_Ships.Values.CopyTo(result, 0);
-		List<Ship> lst = new List<Ship>();
-		lst.AddRange(result);
+		Ship [] result = new Ship [_Ships.Values.Count + 1];
+		_Ships.Values.CopyTo (result, 0);
+		List<Ship> lst = new List<Ship> ();
+		lst.AddRange (result);
 
-		return lst.GetEnumerator();
+		return lst.GetEnumerator ();
 	}
-	IEnumerator<Ship> IEnumerable<Ship>.GetEnumerator()
+	IEnumerator<Ship> IEnumerable<Ship>.GetEnumerator ()
 	{
-		return GetShipEnumerator();
+		return GetShipEnumerator ();
 	}
 
 	/// <summary>
@@ -153,20 +152,20 @@ public class Player : IEnumerable<Ship>
 	/// has.
 	/// </summary>
 	/// <returns>A Ship enumerator</returns>
-	public IEnumerator GetEnumerator()
+	public IEnumerator GetEnumerator ()
 	{
-		Ship[] result = new Ship[_Ships.Values.Count + 1];
-		_Ships.Values.CopyTo(result, 0);
-		List<Ship> lst = new List<Ship>();
-		lst.AddRange(result);
+		Ship [] result = new Ship [_Ships.Values.Count + 1];
+		_Ships.Values.CopyTo (result, 0);
+		List<Ship> lst = new List<Ship> ();
+		lst.AddRange (result);
 
-		return lst.GetEnumerator();
+		return lst.GetEnumerator ();
 	}
 
 	/// <summary>
 	/// Vitual Attack allows the player to shoot
 	/// </summary>
-	public virtual AttackResult Attack()
+	public virtual AttackResult Attack ()
 	{
 		//human does nothing here...
 		return null;
@@ -178,35 +177,33 @@ public class Player : IEnumerable<Ship>
 	/// <param name="row">the row to attack</param>
 	/// <param name="col">the column to attack</param>
 	/// <returns>the result of the attack</returns>
-	internal AttackResult Shoot(int row, int col)
+	internal AttackResult Shoot (int row, int col)
 	{
 		_shots += 1;
-		AttackResult result = default(AttackResult);
-		result = EnemyGrid.HitTile(row, col);
+		AttackResult result = default (AttackResult);
+		result = EnemyGrid.HitTile (row, col);
 
 		switch (result.Value) {
-			case ResultOfAttack.Destroyed:
-			case ResultOfAttack.Hit:
-				_hits += 1;
-				break;
-			case ResultOfAttack.Miss:
-				_misses += 1;
-				break;
+		case ResultOfAttack.Destroyed:
+		case ResultOfAttack.Hit:
+			_hits += 1;
+			break;
+		case ResultOfAttack.Miss:
+			_misses += 1;
+			break;
 		}
 
 		return result;
 	}
-	/// <summary>
-	/// Randomizes the deployment.
-	/// </summary>
-	public virtual void RandomizeDeployment()
+
+	public virtual void RandomizeDeployment ()
 	{
 		bool placementSuccessful = false;
-		Direction heading = default(Direction);
+		Direction heading = default (Direction);
 
 		//for each ship to deploy in shipist
 
-		foreach (ShipName shipToPlace in Enum.GetValues(typeof(ShipName))) {
+		foreach (ShipName shipToPlace in Enum.GetValues (typeof (ShipName))) {
 			if (shipToPlace == ShipName.None)
 				continue;
 
@@ -214,9 +211,9 @@ public class Player : IEnumerable<Ship>
 
 			//generate random position until the ship can be placed
 			do {
-				int dir = _Random.Next(2);
-				int x = _Random.Next(0, 11);
-				int y = _Random.Next(0, 11);
+				int dir = _Random.Next (2);
+				int x = _Random.Next (0, 11);
+				int y = _Random.Next (0, 11);
 
 
 				if (dir == 0) {
@@ -227,7 +224,7 @@ public class Player : IEnumerable<Ship>
 
 				//try to place ship, if position unplaceable, generate new coordinates
 				try {
-					PlayerGrid.MoveShip(x, y, shipToPlace, heading);
+					PlayerGrid.MoveShip (x, y, shipToPlace, heading);
 					placementSuccessful = true;
 				} catch {
 					placementSuccessful = false;
@@ -236,10 +233,3 @@ public class Player : IEnumerable<Ship>
 		}
 	}
 }
-
-//=======================================================
-//Service provided by Telerik (www.telerik.com)
-//Conversion powered by NRefactory.
-//Twitter: @telerik
-//Facebook: facebook.com/telerik
-//=======================================================
