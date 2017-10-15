@@ -65,14 +65,30 @@ public class Ship
 		get { return _row; }
 	}
 
+	/// <summary>
+	/// The Column location of the ship
+	/// </summary>
+	/// <value>The topmost location of the ship</value>
+	/// <returns>the row of the ship</returns>
 	public int Column {
 		get { return _col; }
 	}
 
+	/// <summary>
+	/// The direction of the ship
+	/// </summary>
+	/// <value>The topmost location of the ship</value>
+	/// <returns>the row of the ship</returns>
 	public Direction Direction {
 		get { return _direction; }
 	}
 
+
+	/// <summary>
+	/// The new tile of the ship
+	/// </summary>
+	/// <value>The topmost location of the ship</value>
+	/// <returns>the row of the ship</returns>
 	public Ship (ShipName ship)
 	{
 		_shipName = ship;
@@ -101,7 +117,9 @@ public class Ship
 		}
 		_tiles.Clear ();
 	}
-
+	/// <summary>
+	/// reutnr the hits taken
+	/// </summary>
 	public void Hit ()
 	{
 		_hitsTaken = _hitsTaken + 1;
@@ -115,6 +133,9 @@ public class Ship
 		get { return _tiles.Count > 0; }
 	}
 
+	/// <summary>
+	/// IsDestroy returns if the ships is hit
+	/// </summary>
 	public bool IsDestroyed {
 		get { return Hits == Size; }
 	}

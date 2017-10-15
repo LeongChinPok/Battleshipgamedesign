@@ -211,10 +211,11 @@ public class Player : IEnumerable<Ship>
 
 			//generate random position until the ship can be placed
 			do {
+
+		
 				int dir = _Random.Next (2);
 				int x = _Random.Next (0, 11);
 				int y = _Random.Next (0, 11);
-
 
 				if (dir == 0) {
 					heading = Direction.UpDown;

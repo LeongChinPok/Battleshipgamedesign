@@ -79,6 +79,32 @@ public abstract class AIPlayer : Player
 		{
 			return @this == null || other == null || @this.Row != other.Row || @this.Column != other.Column;
 		}
+
+		/// <summary>
+		/// Determines whether the specified object is equal to the current Location.
+		/// </summary>
+		/// <param name="obj">The <see cref="object"/> to compare with the current <see cref="T:AIPlayer.Location"/>.</param>
+		/// <returns><c>true</c> if the specified <see cref="object"/> is equal to the current <see cref="T:AIPlayer.Location"/>;
+		/// otherwise, <c>false</c>.</returns>
+		public override bool Equals (object obj)
+		{
+			if (obj == null || this.GetType () != obj.GetType ())
+				return false;
+			
+			if (((Location)obj).Column == Column && ((Location)obj).Row == Row)
+				return true;
+
+			return false;
+		}
+
+		/// <summary>
+		/// Serves as a hash function for a Location object.
+		/// </summary>
+		/// <returns>A hash code for this instance that is suitable for use in hashing algorithms and data structures such as a hash table.</returns>
+		public override int GetHashCode ()
+		{
+			return base.GetHashCode ();
+		}
 	}
 
 
