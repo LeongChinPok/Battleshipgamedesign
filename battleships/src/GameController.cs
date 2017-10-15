@@ -282,6 +282,10 @@ public static class GameController
 		case GameState.AlteringSettings:
 			MenuController.HandleSetupMenuInput ();
 			break;
+		//MUTE FUNCTION
+		case GameState.MusicSettings:
+			MenuController.HandleMusicMenuInput ();
+			break;
 		case GameState.Deploying:
 			DeploymentController.HandleDeploymentInput ();
 			break;
@@ -318,6 +322,10 @@ public static class GameController
 			break;
 		case GameState.AlteringSettings:
 			MenuController.DrawSettings ();
+			break;
+			//MUTE FUNCTION
+		case GameState.MusicSettings:
+			MenuController.MusicSettings ();
 			break;
 		case GameState.Deploying:
 			DeploymentController.DrawDeployment ();

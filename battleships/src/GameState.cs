@@ -32,6 +32,9 @@ public enum GameState
 	/// </summary>
 	AlteringSettings,
 
+	//MUTE FUNCTION
+	MusicSettings,
+
 	/// <summary>
 	/// Players are deploying their ships
 	/// </summary>

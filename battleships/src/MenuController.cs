@@ -20,11 +20,13 @@ static class MenuController
 	/// <remarks>
 	/// These are the text captions for the menu items.
 	/// </remarks>
-	private static readonly string [] [] _menuStructure = {
+	private static readonly string[][] _menuStructure = {
 		new string[] {
 			"PLAY",
 			"SETUP",
 			"SCORES",
+			//MUTE FUNCTION
+			"MUTE",
 			"QUIT"
 		},
 		new string[] {
@@ -36,6 +38,12 @@ static class MenuController
 			"EASY",
 			"MEDIUM",
 			"HARD"
+		},
+
+		//MUTE FUNCTION
+		new string[] {
+			"MUTE",
+			"UNMUTE"
 		}
 
 	};
@@ -49,18 +57,26 @@ static class MenuController
 	private const int TEXT_OFFSET = 0;
 	private const int MAIN_MENU = 0;
 	private const int GAME_MENU = 1;
-
 	private const int SETUP_MENU = 2;
+	//MUTE FUNCTION
+	private const int MUSIC_MENU = 3;
+	
 	private const int MAIN_MENU_PLAY_BUTTON = 0;
 	private const int MAIN_MENU_SETUP_BUTTON = 1;
 	private const int MAIN_MENU_TOP_SCORES_BUTTON = 2;
+	//MUTE FUNCTION
+	private const int MAIN_MENU_MUSIC_BUTTON = 3;
+	private const int MAIN_MENU_QUIT_BUTTON = 4;
 
-	private const int MAIN_MENU_QUIT_BUTTON = 3;
 	private const int SETUP_MENU_EASY_BUTTON = 0;
 	private const int SETUP_MENU_MEDIUM_BUTTON = 1;
 	private const int SETUP_MENU_HARD_BUTTON = 2;
-
 	private const int SETUP_MENU_EXIT_BUTTON = 3;
+
+	//MUTE FUNCTION
+	private const int MUSIC_MENU_MUTE_BUTTON = 0;
+	private const int MUSIC_MENU_UNMUTE_BUTTON = 1;
+
 	private const int GAME_MENU_RETURN_BUTTON = 0;
 	private const int GAME_MENU_SURRENDER_BUTTON = 1;
 
@@ -86,6 +102,17 @@ static class MenuController
 
 		if (!handled) {
 			HandleMenuInput (MAIN_MENU, 0, 0);
+		}
+	}
+
+	//MUTE FUNCTION
+	public static void HandleMusicMenuInput ()
+	{
+		bool handled = false;
+		handled = HandleMenuInput(MUSIC_MENU, 1, 1);
+
+		if(!handled) {
+			HandleMenuInput(MAIN_MENU, 0, 0);
 		}
 	}
 
@@ -170,6 +197,13 @@ static class MenuController
 		DrawButtons (SETUP_MENU, 1, 1);
 	}
 
+	//MUTE FUNCTION
+	public static void MusicSettings ()
+	{
+		DrawButtons (MAIN_MENU);
+		DrawButtons (MUSIC_MENU, 1, 1);
+	}
+
 	/// <summary>
 	/// Draw the buttons associated with a top level menu.
 	/// </summary>
@@ -250,6 +284,10 @@ static class MenuController
 		case GAME_MENU:
 			PerformGameMenuAction (button);
 			break;
+			//MUTE FUNCTION
+		case MUSIC_MENU:
+			PerformMusicMenuAction (button);
+			break;
 		}
 	}
 
@@ -269,9 +307,15 @@ static class MenuController
 		case MAIN_MENU_TOP_SCORES_BUTTON:
 			GameController.AddNewState (GameState.ViewingHighScores);
 			break;
+			//MUTE FUNCTION
+		case MAIN_MENU_MUSIC_BUTTON:
+			GameController.AddNewState (GameState.MusicSettings);
+			break;
+
 		case MAIN_MENU_QUIT_BUTTON:
 			GameController.EndCurrentState ();
 			break;
+
 		}
 	}
 
@@ -317,4 +361,21 @@ static class MenuController
 			break;
 		}
 	}
+
+	//MUTE FUNCTION
+	private static void PerformMusicMenuAction(int button)
+	{
+		if (button == MUSIC_MENU_MUTE_BUTTON)
+		{
+			SwinGame.StopMusic();
+		}
+		else if (button == MUSIC_MENU_UNMUTE_BUTTON)
+		{
+			SwinGame.PlayMusic(GameResources.GameMusic("Background"));
+		}
+
+		GameController.EndCurrentState ();
+	}
+
+
 }
