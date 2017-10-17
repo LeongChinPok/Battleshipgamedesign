@@ -32,7 +32,7 @@ public enum GameState
 	/// </summary>
 	AlteringSettings,
 
-	//MUTE FUNCTION
+	//MUTE FUNCTION (Player is changing music settings)
 	MusicSettings,
 
 	/// <summary>
