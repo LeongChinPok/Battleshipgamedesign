@@ -8,7 +8,7 @@
     <Files>
       <File FileName="battleships\src\HighScoreController.cs" Line="29" Column="20" />
       <File FileName="battleships\src\GameController.cs" Line="204" Column="26" />
-      <File FileName="battleships\src\EndingGameController.cs" Line="30" Column="1" />
+      <File FileName="battleships\src\EndingGameController.cs" Line="45" Column="2" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MultiItemStartupConfigurations />
