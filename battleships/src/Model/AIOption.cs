@@ -3,11 +3,8 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Data;
 
-/// <summary>
-/// We do not actually need this library
-/// </summary>
-//using System.Data;
 /// <summary>
 /// The different AI levels.
 /// </summary>

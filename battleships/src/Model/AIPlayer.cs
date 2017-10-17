@@ -4,11 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
 using SwinGameSDK;
-
-/// <summary>
-/// We do not actually need this library
-/// </summary>
-//using System.Data;
+using System.Data;
 
 
 /// <summary>
@@ -66,7 +62,8 @@ public abstract class AIPlayer : Player
 		/// <returns>true if location 1 and location 2 are at the same spot</returns>
 		public static bool operator == (Location @this, Location other)
 		{
-			return @this != null && other != null && @this.Row == other.Row && @this.Column == other.Column;
+			//return @this != null && other != null && @this.Row == other.Row && @this.Column == other.Column;
+			return !ReferenceEquals (@this, null) && !ReferenceEquals (other, null) && @this.Row == other.Row && @this.Column == other.Column;
 		}
 
 		/// <summary>
@@ -77,7 +74,8 @@ public abstract class AIPlayer : Player
 		/// <returns>true if location 1 and location 2 are not at the same spot</returns>
 		public static bool operator != (Location @this, Location other)
 		{
-			return @this == null || other == null || @this.Row != other.Row || @this.Column != other.Column;
+			//return @this == null || other == null || @this.Row != other.Row || @this.Column != other.Column;
+			return ReferenceEquals(@this, null) || ReferenceEquals(other, null) || @this.Row != other.Row || @this.Column != other.Column;
 		}
 
 		/// <summary>

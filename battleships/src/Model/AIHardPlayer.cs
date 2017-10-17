@@ -3,11 +3,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
-
-/// <summary>
-/// We do not actually need this library
-/// </summary>
-//using System.Data;
+using System.Data;
 
 
 /// <summary>
@@ -105,6 +101,7 @@ public class AIHardPlayer : AIPlayer
 	private List<Target> _LastHit = new List<Target> ();
 
 	private Target _CurrentTarget;
+
 	public AIHardPlayer (BattleShipsGame game) : base (game)
 	{
 	}
