@@ -26,6 +26,8 @@ static class EndingGameController
 		} else {
 			SwinGame.DrawTextLines ("-- WINNER --", Color.White, Color.Transparent, GameResources.GameFont ("ArialLarge"), FontAlignment.AlignCenter, 0, 250, SwinGame.ScreenWidth (), SwinGame.ScreenHeight ());
 		}
+
+		SwinGame.DrawTextLines ("Score: " + GameController.HumanPlayer.Score, Color.White, Color.Transparent, GameResources.GameFont ("ArialLarge"), FontAlignment.AlignCenter, 0, 350, SwinGame.ScreenWidth (), SwinGame.ScreenHeight ());
 	}
 
 	/// <summary>
