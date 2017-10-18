@@ -98,7 +98,7 @@ public class AIEasyPlayer : AIPlayer
 		} else if (result.Value == ResultOfAttack.ShotAlready) {
 			throw new ApplicationException ("Error in AI");
 		}
-	}
+	} 
 
 	/// <summary>
 	/// AddTarget will add the targets it will shoot onto a stack
@@ -106,12 +106,12 @@ public class AIEasyPlayer : AIPlayer
 	/// <param name="row">the row of the targets location</param>
 	/// <param name="column">the column of the targets location</param>
 	private void AddTarget (int row, int column)
-	{
+	{ 
 		//remove item since item is not declared. Hence cannot be call
 		//Change bracket from() to square bracket[]
 		if (row >= 0 && column >= 0 && row < EnemyGrid.Height && column < EnemyGrid.Width && EnemyGrid [row, column] == TileView.Sea) {
 			_Targets.Push (new Location (row, column));
-		}
+		} 
 	}
 }
 

@@ -26,7 +26,7 @@ static class MenuController
 			"SETUP",
 			"SCORES",
 			//MUTE FUNCTION
-			"MUTE",
+			"MUSIC",
 			"QUIT"
 		},
 		new string[] {
@@ -328,9 +328,9 @@ static class MenuController
 	private static void PerformSetupMenuAction (int button)
 	{
 		switch (button) {
-	/*  case SETUP_MENU_EASY_BUTTON:
+		case SETUP_MENU_EASY_BUTTON:
 			GameController.SetDifficulty (AIOption.Hard);
-			break; */
+			break;
 		case SETUP_MENU_MEDIUM_BUTTON:
 			GameController.SetDifficulty (AIOption.Medium);
 			break;
