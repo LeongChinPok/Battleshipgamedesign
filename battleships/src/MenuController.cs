@@ -27,6 +27,8 @@ static class MenuController
 			"SCORES",
 			//MUTE FUNCTION
 			"MUSIC",
+			//INSTRUCTION FUNCTION
+			"INSTRUCTION",
 			"QUIT"
 		},
 		new string[] {
@@ -51,7 +53,7 @@ static class MenuController
 	private const int MENU_TOP = 575;
 	private const int MENU_LEFT = 30;
 	private const int MENU_GAP = 0;
-	private const int BUTTON_WIDTH = 75;
+	private const int BUTTON_WIDTH = 79;
 	private const int BUTTON_HEIGHT = 15;
 	private const int BUTTON_SEP = BUTTON_WIDTH + MENU_GAP;
 
@@ -61,13 +63,17 @@ static class MenuController
 	private const int SETUP_MENU = 2;
 	//MUTE FUNCTION
 	private const int MUSIC_MENU = 3;
+	//INSTRUCTION FUNCTION
+	private const int INSTRUCTION_MENU = 4;
 	
 	private const int MAIN_MENU_PLAY_BUTTON = 0;
 	private const int MAIN_MENU_SETUP_BUTTON = 1;
 	private const int MAIN_MENU_TOP_SCORES_BUTTON = 2;
 	//MUTE FUNCTION
 	private const int MAIN_MENU_MUSIC_BUTTON = 3;
-	private const int MAIN_MENU_QUIT_BUTTON = 4;
+	//INSTRUCTION FUNCTION
+	private const int MAIN_MENU_INSTRUCTION_BUTTON = 4;
+	private const int MAIN_MENU_QUIT_BUTTON = 5;
 
 	private const int SETUP_MENU_EASY_BUTTON = 0;
 	private const int SETUP_MENU_MEDIUM_BUTTON = 1;
@@ -115,6 +121,16 @@ static class MenuController
 
 		if(!handled) {
 			HandleMenuInput(MAIN_MENU, 0, 0);
+		}
+	}
+
+	public static void HandleInstructionMenuInput ()
+	{
+		bool handled = false;
+		handled = HandleMenuInput (INSTRUCTION_MENU, 1, 1);
+
+		if (!handled) {
+			HandleMenuInput (MAIN_MENU, 0, 0);
 		}
 	}
 
@@ -204,6 +220,13 @@ static class MenuController
 	{
 		DrawButtons (MAIN_MENU);
 		DrawButtons (MUSIC_MENU, 1, 1);
+	}
+
+	//INSTRUCTION FUNCTION
+	public static void InstructionSettings ()
+	{
+		DrawButtons (MAIN_MENU);
+		DrawButtons (INSTRUCTION_MENU, 1, 1);
 	}
 
 	/// <summary>
@@ -383,5 +406,10 @@ static class MenuController
 		GameController.EndCurrentState ();
 	}
 
-
+	private static void PerformInstructionMenuAction (int button)
+	{
+		if (button == MAIN_MENU_INSTRUCTION_BUTTON) {
+			Console.WriteLine ("Hello");
+		}
+	}
 }

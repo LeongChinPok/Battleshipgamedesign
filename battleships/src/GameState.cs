@@ -35,6 +35,9 @@ public enum GameState
 	//MUTE FUNCTION (Player is changing music settings)
 	MusicSettings,
 
+	//INSTRUCTION FUNCTION
+	ViewInstruction,
+
 	/// <summary>
 	/// Players are deploying their ships
 	/// </summary>
