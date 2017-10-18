@@ -42,8 +42,9 @@ static class MenuController
 
 		//MUTE FUNCTION
 		new string[] {
-			"MUTE",
-			"UNMUTE"
+			"DEFAULT",
+			"EDM",
+			"MUTE"
 		}
 
 	};
@@ -74,8 +75,9 @@ static class MenuController
 	private const int SETUP_MENU_EXIT_BUTTON = 3;
 
 	//MUTE FUNCTION
-	private const int MUSIC_MENU_MUTE_BUTTON = 0;
-	private const int MUSIC_MENU_UNMUTE_BUTTON = 1;
+	private const int MUSIC_MENU_BGM1_BUTTON = 0;
+	private const int MUSIC_MENU_BGM2_BUTTON = 1;
+	private const int MUSIC_MENU_MUTE_BUTTON = 2;
 
 	private const int GAME_MENU_RETURN_BUTTON = 0;
 	private const int GAME_MENU_SURRENDER_BUTTON = 1;
@@ -365,13 +367,17 @@ static class MenuController
 	//MUTE FUNCTION
 	private static void PerformMusicMenuAction(int button)
 	{
-		if (button == MUSIC_MENU_MUTE_BUTTON)
+		if (button == MUSIC_MENU_BGM1_BUTTON) 
+		{
+			SwinGame.PlayMusic (GameResources.GameMusic ("Background"));
+		} 
+		else if (button == MUSIC_MENU_BGM2_BUTTON) 
+		{
+			SwinGame.PlayMusic (GameResources.GameMusic ("Electronic"));
+		} 
+		else if (button == MUSIC_MENU_MUTE_BUTTON)
 		{
 			SwinGame.StopMusic();
-		}
-		else if (button == MUSIC_MENU_UNMUTE_BUTTON)
-		{
-			SwinGame.PlayMusic(GameResources.GameMusic("Background"));
 		}
 
 		GameController.EndCurrentState ();

@@ -4,18 +4,18 @@
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.Workbench ActiveDocument="battleships\src\EndingGameController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="battleships\src\GameResources.cs">
     <Files>
       <File FileName="battleships\src\HighScoreController.cs" Line="18" Column="34" />
-      <File FileName="battleships\src\GameController.cs" Line="86" Column="10" />
-      <File FileName="battleships\src\EndingGameController.cs" Line="44" Column="4" />
-      <File FileName="battleships\src\GameLogic.cs" Line="1" Column="1" />
-      <File FileName="battleships\src\MenuController.cs" Line="380" Column="2" />
-      <File FileName="battleships\src\GameState.cs" Line="1" Column="1" />
+      <File FileName="battleships\src\GameController.cs" Line="314" Column="24" />
+      <File FileName="battleships\src\EndingGameController.cs" Line="36" Column="15" />
+      <File FileName="battleships\src\GameLogic.cs" Line="19" Column="49" />
+      <File FileName="battleships\src\MenuController.cs" Line="384" Column="3" />
+      <File FileName="battleships\src\GameState.cs" Line="38" Column="15" />
       <File FileName="battleships\src\UtilityFunctions.cs" Line="1" Column="1" />
       <File FileName="battleships\src\Model\TileView.cs" Line="1" Column="1" />
       <File FileName="battleships\src\Model\Tile.cs" Line="1" Column="1" />
-      <File FileName="battleships\src\GameResources.cs" Line="1" Column="1" />
+      <File FileName="battleships\src\GameResources.cs" Line="60" Column="14" />
       <File FileName="battleships\src\Model\ShipName.cs" Line="1" Column="1" />
       <File FileName="battleships\src\Model\SeaGridAdapter.cs" Line="1" Column="1" />
       <File FileName="battleships\src\Model\SeaGrid.cs" Line="1" Column="1" />
@@ -32,6 +32,7 @@
       <File FileName="battleships\src\DeploymentController.cs" Line="61" Column="54" />
       <File FileName="battleships\src\Model\AIEasyPlayer.cs" Line="79" Column="44" />
       <File FileName="battleships\src\DiscoveryController.cs" Line="1" Column="1" />
+      <File FileName="battleships\Resources\panels\FileDialog.txt" Line="14" Column="15" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MultiItemStartupConfigurations />
