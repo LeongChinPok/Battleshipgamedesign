@@ -2,40 +2,37 @@
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug-Windows|x86" />
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore>
-      <Breakpoint file="C:\Users\Apple086zZ\Battleshipgamedesign\battleships\src\MenuController.cs" relfile="battleships\src\MenuController.cs" line="159" column="1" />
-    </BreakpointStore>
+    <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.Workbench ActiveDocument="battleships\src\MenuController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Battleshipgamedesign Status">
     <Files>
-      <File FileName="battleships\src\HighScoreController.cs" Line="191" Column="4" />
-      <File FileName="battleships\src\GameController.cs" Line="341" Column="10" />
-      <File FileName="battleships\src\MenuController.cs" Line="396" Column="5" />
-      <File FileName="battleships\src\GameState.cs" Line="39" Column="18" />
-      <File FileName="battleships\src\EndingGameController.cs" Line="36" Column="15" />
-      <File FileName="battleships\src\GameLogic.cs" Line="19" Column="49" />
+      <File FileName="battleships\src\GameController.cs" Line="1" Column="1" />
+      <File FileName="battleships\src\MenuController.cs" Line="245" Column="3" />
+      <File FileName="battleships\src\GameState.cs" Line="23" Column="18" />
       <File FileName="battleships\src\UtilityFunctions.cs" Line="1" Column="1" />
-      <File FileName="battleships\src\Model\TileView.cs" Line="1" Column="1" />
-      <File FileName="battleships\src\Model\Tile.cs" Line="1" Column="1" />
-      <File FileName="battleships\src\GameResources.cs" Line="1" Column="1" />
-      <File FileName="battleships\src\Model\ShipName.cs" Line="1" Column="1" />
-      <File FileName="battleships\src\Model\SeaGridAdapter.cs" Line="1" Column="1" />
-      <File FileName="battleships\src\Model\SeaGrid.cs" Line="1" Column="1" />
-      <File FileName="battleships\src\Model\ResultOfAttack.cs" Line="1" Column="1" />
-      <File FileName="battleships\src\Model\Player.cs" Line="1" Column="1" />
-      <File FileName="battleships\src\Model\ISeaGrid.cs" Line="1" Column="1" />
-      <File FileName="battleships\src\Model\Direction.cs" Line="1" Column="1" />
-      <File FileName="battleships\src\Model\BattleShipsGame.cs" Line="1" Column="1" />
-      <File FileName="battleships\src\Model\AttackResult.cs" Line="1" Column="1" />
-      <File FileName="battleships\src\Model\AIPlayer.cs" Line="15" Column="2" />
-      <File FileName="battleships\src\Model\AIOption.cs" Line="1" Column="1" />
-      <File FileName="battleships\src\Model\AIMediumPlayer.cs" Line="1" Column="1" />
-      <File FileName="battleships\src\Model\AIHardPlayer.cs" Line="158" Column="55" />
-      <File FileName="battleships\src\Model\AIEasyPlayer.cs" Line="96" Column="29" />
+      <File FileName="battleships\src\GameResources.cs" Line="12" Column="34" />
+      <File FileName="battleships\src\GameLogic.cs" Line="1" Column="1" />
+      <File FileName="battleships\src\HighScoreController.cs" Line="131" Column="45" />
       <File FileName="battleships\src\DeploymentController.cs" Line="1" Column="1" />
-      <File FileName="battleships\src\DiscoveryController.cs" Line="1" Column="1" />
-      <File FileName="battleships\Resources\panels\FileDialog.txt" Line="1" Column="1" />
+      <File FileName="battleships\src\EndingGameController.cs" Line="1" Column="1" />
+      <File FileName="Battleshipgamedesign Status" />
     </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="Battleships" expanded="True">
+            <Node name="Battleships" expanded="True">
+              <Node name="Resources" expanded="True">
+                <Node name="fonts" expanded="True" />
+              </Node>
+              <Node name="src" expanded="True">
+                <Node name="MenuController.cs" selected="True" />
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
   </MonoDevelop.Ide.Workbench>
   <MultiItemStartupConfigurations />
   <MonoDevelop.Ide.ItemProperties.Battleships PreferredExecutionTarget="MonoDevelop.Default" />

@@ -20,7 +20,7 @@ static class MenuController
 	/// <remarks>
 	/// These are the text captions for the menu items.
 	/// </remarks>
-	private static readonly string[][] _menuStructure = {
+	private static readonly string [] [] _menuStructure = {
 		new string[] {
 			"PLAY",
 			"SETUP",
@@ -47,6 +47,11 @@ static class MenuController
 			"DEFAULT",
 			"EDM",
 			"MUTE"
+		},
+
+		//INSTRUCTION FUNCTION
+		new string[] {
+			"",
 		}
 
 	};
@@ -84,6 +89,9 @@ static class MenuController
 	private const int MUSIC_MENU_BGM1_BUTTON = 0;
 	private const int MUSIC_MENU_BGM2_BUTTON = 1;
 	private const int MUSIC_MENU_MUTE_BUTTON = 2;
+
+	//INSTRUCTION FUNCTION
+	private const int INSTRUCTION_MENU_SC_BUTTON = 0;
 
 	private const int GAME_MENU_RETURN_BUTTON = 0;
 	private const int GAME_MENU_SURRENDER_BUTTON = 1;
@@ -226,7 +234,6 @@ static class MenuController
 	public static void InstructionSettings ()
 	{
 		DrawButtons (MAIN_MENU);
-		DrawButtons (INSTRUCTION_MENU, 1, 1);
 	}
 
 	/// <summary>
@@ -313,6 +320,7 @@ static class MenuController
 		case MUSIC_MENU:
 			PerformMusicMenuAction (button);
 			break;
+
 		}
 	}
 
@@ -336,6 +344,10 @@ static class MenuController
 		case MAIN_MENU_MUSIC_BUTTON:
 			GameController.AddNewState (GameState.MusicSettings);
 			break;
+			//INSTRUCTION FUNCTION
+		case MAIN_MENU_INSTRUCTION_BUTTON:
+			GameController.AddNewState (GameState.ViewInstruction);
+			break;
 
 		case MAIN_MENU_QUIT_BUTTON:
 			GameController.EndCurrentState ();
@@ -352,7 +364,7 @@ static class MenuController
 	{
 		switch (button) {
 		case SETUP_MENU_EASY_BUTTON:
-			GameController.SetDifficulty (AIOption.Hard);
+			GameController.SetDifficulty (AIOption.Easy);
 			break;
 		case SETUP_MENU_MEDIUM_BUTTON:
 			GameController.SetDifficulty (AIOption.Medium);
@@ -406,10 +418,4 @@ static class MenuController
 		GameController.EndCurrentState ();
 	}
 
-	private static void PerformInstructionMenuAction (int button)
-	{
-		if (button == MAIN_MENU_INSTRUCTION_BUTTON) {
-			Console.WriteLine ("Hello");
-		}
-	}
 }

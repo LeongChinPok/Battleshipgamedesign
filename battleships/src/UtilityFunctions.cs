@@ -237,6 +237,9 @@ static class UtilityFunctions
 		case GameState.MusicSettings:	
 			SwinGame.DrawBitmap (GameResources.GameImage ("Menu"), 0, 0);
 			break;
+		case GameState.ViewInstruction:
+			SwinGame.DrawBitmap (GameResources.GameImage ("Instruction"), 0, 0);
+			break;
 		case GameState.Discovering:
 		case GameState.EndingGame:
 			SwinGame.DrawBitmap (GameResources.GameImage ("Discovery"), 0, 0);

@@ -75,6 +75,9 @@ public static class GameController
 
 		//create the players
 		switch (_aiSetting) {
+		case AIOption.Easy:
+			_ai = new AIEasyPlayer (_theGame);
+			break;
 		case AIOption.Medium:
 			_ai = new AIMediumPlayer (_theGame);
 			break;
@@ -282,10 +285,12 @@ public static class GameController
 		case GameState.AlteringSettings:
 			MenuController.HandleSetupMenuInput ();
 			break;
-		//MUTE FUNCTION
+			//MUTE FUNCTION
 		case GameState.MusicSettings:
 			MenuController.HandleMusicMenuInput ();
 			break;
+
+			//INSTRUCTION FUNCTION
 		case GameState.ViewInstruction:
 			MenuController.HandleInstructionMenuInput ();
 			break;

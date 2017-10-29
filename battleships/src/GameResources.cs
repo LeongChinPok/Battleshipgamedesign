@@ -12,9 +12,11 @@ public static class GameResources
 	private static void LoadFonts ()
 	{
 		NewFont ("ArialLarge", "arial.ttf", 80);
+        NewFont ("CourierL", "cour.ttf", 36);
 		NewFont ("Courier", "cour.ttf", 14);
 		NewFont ("CourierSmall", "cour.ttf", 8);
 		NewFont ("Menu", "ffaccess.ttf", 8);
+		NewFont ("Quicksand", "qs_bold.otf", 36);
 	}
 
 	private static void LoadImages ()
@@ -23,7 +25,7 @@ public static class GameResources
 		NewImage ("Menu", "main_page.jpg");
 		NewImage ("Discovery", "discover.jpg");
 		NewImage ("Deploy", "deploy.jpg");
-		NewImage ("Instruction", "instructionPage.jpg");
+		NewImage ("Instruction", "instruction.jpg");
 
 		//Deployment
 		NewImage ("LeftRightButton", "deploy_dir_button_horiz.png");
