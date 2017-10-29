@@ -233,6 +233,10 @@ static class MenuController
 	//INSTRUCTION FUNCTION
 	public static void InstructionSettings ()
 	{
+		const int INST_LEFT = 10;
+		const int INST_TOP = 10;
+
+		SwinGame.DrawText ("Hi", Color.Red, GameResources.GameFont ("Quicksand"), INST_LEFT, INST_TOP);
 		DrawButtons (MAIN_MENU);
 	}
 

@@ -214,9 +214,6 @@
     <None Include="Resources\images\instruction.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="Resources\images\instructionPage.jpg">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
     <None Include="Resources\images\loader_empty.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
