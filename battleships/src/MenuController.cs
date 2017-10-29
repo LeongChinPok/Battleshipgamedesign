@@ -236,7 +236,38 @@ static class MenuController
 		const int INST_LEFT = 10;
 		const int INST_TOP = 10;
 
-		SwinGame.DrawText ("Hi", Color.Red, GameResources.GameFont ("Quicksand"), INST_LEFT, INST_TOP);
+		SwinGame.DrawText ("Objective:", Color.Gold, GameResources.GameFont ("Quicksand"), INST_LEFT, INST_TOP);
+		SwinGame.DrawText ("Sink all enemy ships before they destroy all of yours.", Color.Gold, GameResources.GameFont ("Quicksand"), INST_LEFT + 135, INST_TOP);
+		SwinGame.DrawText ("Preparation:", Color.Gold, GameResources.GameFont ("Quicksand"), INST_LEFT, INST_TOP + 25);
+		SwinGame.DrawText ("Place ship horizontally or vertically (Can be randomed).", Color.Gold, GameResources.GameFont ("Quicksand"), INST_LEFT + 135, INST_TOP + 25);
+		SwinGame.DrawText ("Gameplay:", Color.Gold, GameResources.GameFont ("Quicksand"), INST_LEFT, INST_TOP + 50);
+		SwinGame.DrawText ("Click on a grid to 'attack' enemy, Red indicates shots hit on", Color.Gold, GameResources.GameFont ("Quicksand"), INST_LEFT + 135, INST_TOP + 50);
+		SwinGame.DrawText ("enemy battleship while Blue indicates shots missed.", Color.Gold, GameResources.GameFont ("Quicksand"), INST_LEFT + 135, INST_TOP + 75);
+
+		SwinGame.DrawText ("MAIN MENU", Color.Gold, GameResources.GameFont ("Quicksand"), INST_LEFT, INST_TOP + 135);
+		SwinGame.DrawText ("DESCRIPTION", Color.Gold, GameResources.GameFont ("Quicksand"), INST_LEFT + 225, INST_TOP + 135);
+		SwinGame.DrawText ("Play", Color.Gold, GameResources.GameFont ("Quicksand"), INST_LEFT, INST_TOP + 160);
+		SwinGame.DrawText ("Allow deployment of ship and start game against AI", Color.Gold, GameResources.GameFont ("Quicksand"), INST_LEFT + 225, INST_TOP + 160);
+		SwinGame.DrawText ("Setup", Color.Gold, GameResources.GameFont ("Quicksand"), INST_LEFT, INST_TOP + 185);
+		SwinGame.DrawText ("Allow AI difficulty to be changed", Color.Gold, GameResources.GameFont ("Quicksand"), INST_LEFT + 225, INST_TOP + 185);
+		SwinGame.DrawText ("Scores", Color.Gold, GameResources.GameFont ("Quicksand"), INST_LEFT, INST_TOP + 210);
+		SwinGame.DrawText ("Show TOP 10 highest score in the game", Color.Gold, GameResources.GameFont ("Quicksand"), INST_LEFT + 225, INST_TOP + 210);
+		SwinGame.DrawText ("Music", Color.Gold, GameResources.GameFont ("Quicksand"), INST_LEFT, INST_TOP + 235);
+		SwinGame.DrawText ("Allow background music to be changed or muted", Color.Gold, GameResources.GameFont ("Quicksand"), INST_LEFT + 225, INST_TOP + 235);
+		SwinGame.DrawText ("Quit", Color.Gold, GameResources.GameFont ("Quicksand"), INST_LEFT, INST_TOP + 260);
+		SwinGame.DrawText ("Close the program", Color.Gold, GameResources.GameFont ("Quicksand"), INST_LEFT + 225, INST_TOP + 260);
+
+		SwinGame.DrawText ("SHORTCUTS", Color.Gold, GameResources.GameFont ("Quicksand"), INST_LEFT, INST_TOP + 320);
+		SwinGame.DrawText ("DESCRIPTION", Color.Gold, GameResources.GameFont ("Quicksand"), INST_LEFT + 225, INST_TOP + 320);
+		SwinGame.DrawText ("esc", Color.Gold, GameResources.GameFont ("Quicksand"), INST_LEFT, INST_TOP + 345);
+		SwinGame.DrawText ("Allow user to pause/quit game, return to main menu", Color.Gold, GameResources.GameFont ("Quicksand"), INST_LEFT + 225, INST_TOP + 345);
+		SwinGame.DrawText ("up/down arrow", Color.Gold, GameResources.GameFont ("Quicksand"), INST_LEFT, INST_TOP + 370);
+		SwinGame.DrawText ("Place ship vertically in deployment stage", Color.Gold, GameResources.GameFont ("Quicksand"), INST_LEFT + 225, INST_TOP + 370);
+		SwinGame.DrawText ("left/right arrow", Color.Gold, GameResources.GameFont ("Quicksand"), INST_LEFT, INST_TOP + 395);
+		SwinGame.DrawText ("Place ship horizontally in deployment stage", Color.Gold, GameResources.GameFont ("Quicksand"), INST_LEFT + 225, INST_TOP + 395);
+		SwinGame.DrawText ("r", Color.Gold, GameResources.GameFont ("Quicksand"), INST_LEFT, INST_TOP + 420);
+		SwinGame.DrawText ("Randomize ship placement in deployment stage", Color.Gold, GameResources.GameFont ("Quicksand"), INST_LEFT + 225, INST_TOP + 420);
+
 		DrawButtons (MAIN_MENU);
 	}
 
