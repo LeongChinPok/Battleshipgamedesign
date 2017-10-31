@@ -25,6 +25,10 @@ public static class GameResources
 		NewImage ("Discovery", "discover.jpg");
 		NewImage ("Deploy", "deploy.jpg");
 		NewImage ("Instruction", "instruction.jpg");
+        NewImage ("Menu2", "main_page2.jpg");
+		NewImage ("Discovery2", "discover2.jpg");
+		NewImage ("Deploy2", "deploy2.jpg");
+		NewImage ("Instruction2", "instruction2.jpg");
 
 		//Deployment
 		NewImage ("LeftRightButton", "deploy_dir_button_horiz.png");
@@ -32,17 +36,25 @@ public static class GameResources
 		NewImage ("SelectedShip", "deploy_button_hl.png");
 		NewImage ("PlayButton", "deploy_play_button.png");
 		NewImage ("RandomButton", "deploy_randomize_button.png");
-
+        NewImage ("LeftRightButton2", "deploy_dir_button_horiz2.jpg");
+		NewImage ("UpDownButton2", "deploy_dir_button_vert2.jpg");
+		NewImage ("SelectedShip2", "deploy_button_hl2.jpg");
+		NewImage ("PlayButton2", "deploy_play_button2.jpg");
+		NewImage ("RandomButton2", "deploy_randomize_button2.jpg");
 		//Ships
 		int i = 0;
 		for (i = 1; i <= 5; i++) {
 			NewImage ("ShipLR" + i, "ship_deploy_horiz_" + i + ".png");
 			NewImage ("ShipUD" + i, "ship_deploy_vert_" + i + ".png");
+            NewImage ("2ShipLR" + i, "2ship_deploy_horiz_" + i + ".jpg");
+			NewImage ("2ShipUD" + i, "2ship_deploy_vert_" + i + ".jpg");
 		}
 
 		//Explosions
 		NewImage ("Explosion", "explosion.png");
 		NewImage ("Splash", "splash.png");
+        NewImage ("Explosion2", "explosion2.jpg");
+		NewImage ("Splash2", "splash2.jpg");
 
 	}
 

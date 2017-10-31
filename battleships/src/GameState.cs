@@ -35,6 +35,9 @@ public enum GameState
 	//MUTE FUNCTION (Player is changing music settings)
 	MusicSettings,
 
+	//CHANGE THEME
+	ChangeTheme,
+
 	//INSTRUCTION FUNCTION
 	ViewInstruction,
 

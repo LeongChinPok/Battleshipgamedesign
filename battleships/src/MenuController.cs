@@ -27,6 +27,8 @@ static class MenuController
 			"SCORES",
 			//MUTE FUNCTION
 			"MUSIC",
+			//CHANGE THEME
+			"THEME",
 			//INSTRUCTION FUNCTION
 			"INSTRUCTION",
 			"QUIT"
@@ -49,11 +51,16 @@ static class MenuController
 			"MUTE"
 		},
 
+		//THEME CHANGE
+		new string[] {
+			"DEFAULT",
+			"CLASSIC"
+		},
+
 		//INSTRUCTION FUNCTION
 		new string[] {
-			"",
+			""
 		}
-
 	};
 	private const int MENU_TOP = 575;
 	private const int MENU_LEFT = 30;
@@ -68,17 +75,21 @@ static class MenuController
 	private const int SETUP_MENU = 2;
 	//MUTE FUNCTION
 	private const int MUSIC_MENU = 3;
+	//CHANGE THEME
+	private const int THEME_MENU = 4;
 	//INSTRUCTION FUNCTION
-	private const int INSTRUCTION_MENU = 4;
+	private const int INSTRUCTION_MENU = 5;
 	
 	private const int MAIN_MENU_PLAY_BUTTON = 0;
 	private const int MAIN_MENU_SETUP_BUTTON = 1;
 	private const int MAIN_MENU_TOP_SCORES_BUTTON = 2;
 	//MUTE FUNCTION
 	private const int MAIN_MENU_MUSIC_BUTTON = 3;
+	//CHANGE THEME
+	private const int MAIN_MENU_THEME_BUTTON = 4;
 	//INSTRUCTION FUNCTION
-	private const int MAIN_MENU_INSTRUCTION_BUTTON = 4;
-	private const int MAIN_MENU_QUIT_BUTTON = 5;
+	private const int MAIN_MENU_INSTRUCTION_BUTTON = 5;
+	private const int MAIN_MENU_QUIT_BUTTON = 6;
 
 	private const int SETUP_MENU_EASY_BUTTON = 0;
 	private const int SETUP_MENU_MEDIUM_BUTTON = 1;
@@ -89,6 +100,10 @@ static class MenuController
 	private const int MUSIC_MENU_BGM1_BUTTON = 0;
 	private const int MUSIC_MENU_BGM2_BUTTON = 1;
 	private const int MUSIC_MENU_MUTE_BUTTON = 2;
+
+	//CHANGE THEME
+	private const int THEME_MENU_BLUE_BUTTON = 0;
+	private const int THEME_MENU_GREY_BUTTON = 1;
 
 	//INSTRUCTION FUNCTION
 	private const int INSTRUCTION_MENU_SC_BUTTON = 0;
@@ -131,6 +146,15 @@ static class MenuController
 			HandleMenuInput(MAIN_MENU, 0, 0);
 		}
 	}
+
+	public static void HandleThemeMenuInput ()
+	{
+		bool handled = false;
+		handled = HandleMenuInput (THEME_MENU, 1, 1);
+
+		if (!handled) {
+			HandleMenuInput (MAIN_MENU, 0, 0);
+		}	}
 
 	public static void HandleInstructionMenuInput ()
 	{
@@ -229,6 +253,11 @@ static class MenuController
 		DrawButtons (MAIN_MENU);
 		DrawButtons (MUSIC_MENU, 1, 1);
 	}
+
+	public static void ThemeSettings ()
+	{
+		DrawButtons (MAIN_MENU);
+		DrawButtons (THEME_MENU, 1, 1);	}
 
 	//INSTRUCTION FUNCTION
 	public static void InstructionSettings ()
@@ -355,6 +384,10 @@ static class MenuController
 		case MUSIC_MENU:
 			PerformMusicMenuAction (button);
 			break;
+		case THEME_MENU:
+			PerformThemeMenuAction (button);
+			break;
+
 
 		}
 	}
@@ -378,6 +411,10 @@ static class MenuController
 			//MUTE FUNCTION
 		case MAIN_MENU_MUSIC_BUTTON:
 			GameController.AddNewState (GameState.MusicSettings);
+			break;
+			//CHANGE THEME
+		case MAIN_MENU_THEME_BUTTON:
+			GameController.AddNewState (GameState.ChangeTheme);
 			break;
 			//INSTRUCTION FUNCTION
 		case MAIN_MENU_INSTRUCTION_BUTTON:
@@ -453,4 +490,19 @@ static class MenuController
 		GameController.EndCurrentState ();
 	}
 
-}
+	private static void PerformThemeMenuAction (int button)
+	{
+		if (button == THEME_MENU_BLUE_BUTTON) 
+		{
+			SwinGame.DrawBitmap(GameResources.GameImage ("Menu"), 0, 0);
+
+		}      
+		
+			else if (button == THEME_MENU_GREY_BUTTON) 
+		{
+
+			SwinGame.DrawBitmap(GameResources.GameImage ("Menu2"), 0, 0);
+		}
+
+		GameController.EndCurrentState ();
+	}}
