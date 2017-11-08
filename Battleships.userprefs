@@ -6,14 +6,14 @@
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.Workbench ActiveDocument="battleships\src\UtilityFunctions.cs">
     <Files>
-      <File FileName="battleships\src\GameController.cs" Line="289" Column="27" />
-      <File FileName="battleships\src\MenuController.cs" Line="507" Column="4" />
-      <File FileName="battleships\src\GameResources.cs" Line="54" Column="43" />
+      <File FileName="battleships\src\GameController.cs" Line="377" Column="35" />
+      <File FileName="battleships\src\MenuController.cs" Line="416" Column="10" />
+      <File FileName="battleships\src\GameResources.cs" Line="24" Column="38" />
       <File FileName="battleships\src\GameState.cs" Line="9" Column="57" />
       <File FileName="battleships\src\DeploymentController.cs" Line="1" Column="1" />
-      <File FileName="battleships\src\DiscoveryController.cs" Line="1" Column="1" />
-      <File FileName="battleships\src\GameLogic.cs" Line="17" Column="34" />
-      <File FileName="battleships\src\UtilityFunctions.cs" Line="265" Column="37" />
+      <File FileName="battleships\src\DiscoveryController.cs" Line="20" Column="39" />
+      <File FileName="battleships\src\GameLogic.cs" Line="24" Column="29" />
+      <File FileName="battleships\src\UtilityFunctions.cs" Line="285" Column="58" />
       <File FileName="battleships\src\HighScoreController.cs" Line="1" Column="1" />
       <File FileName="battleships\src\EndingGameController.cs" Line="1" Column="1" />
     </Files>

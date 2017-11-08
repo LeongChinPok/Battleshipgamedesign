@@ -289,7 +289,10 @@ public static class GameController
 		case GameState.MusicSettings:
 			MenuController.HandleMusicMenuInput ();
 			break;
-
+			//CHANGE THEME
+		case GameState.ChangeTheme:
+			MenuController.HandleThemeMenuInput ();
+			break;
 			//INSTRUCTION FUNCTION
 		case GameState.ViewInstruction:
 			MenuController.HandleInstructionMenuInput ();
@@ -338,6 +341,55 @@ public static class GameController
 			//INSTRUCTION FUNCTION
 		case GameState.ViewInstruction:
 			MenuController.InstructionSettings ();
+			break;
+			//CHANGE THEME
+		case GameState.ChangeTheme:
+			MenuController.ThemeSettings ();
+			break;
+		case GameState.Deploying:
+			DeploymentController.DrawDeployment ();
+			break;
+		case GameState.Discovering:
+			DiscoveryController.DrawDiscovery ();
+			break;
+		case GameState.EndingGame:
+			EndingGameController.DrawEndOfGame ();
+			break;
+		case GameState.ViewingHighScores:
+			HighScoreController.DrawHighScores ();
+			break;
+		}
+
+		UtilityFunctions.DrawAnimations ();
+
+		SwinGame.RefreshScreen ();
+	}
+
+	public static void DrawScreen2 ()
+	{
+		UtilityFunctions.DrawBackground2 ();
+
+		switch (CurrentState) {
+		case GameState.ViewingMainMenu:
+			MenuController.DrawMainMenu ();
+			break;
+		case GameState.ViewingGameMenu:
+			MenuController.DrawGameMenu ();
+			break;
+		case GameState.AlteringSettings:
+			MenuController.DrawSettings ();
+			break;
+		//MUTE FUNCTION
+		case GameState.MusicSettings:
+			MenuController.MusicSettings ();
+			break;
+		//INSTRUCTION FUNCTION
+		case GameState.ViewInstruction:
+			MenuController.InstructionSettings ();
+			break;
+		//CHANGE THEME
+		case GameState.ChangeTheme:
+			MenuController.ThemeSettings ();
 			break;
 		case GameState.Deploying:
 			DeploymentController.DrawDeployment ();

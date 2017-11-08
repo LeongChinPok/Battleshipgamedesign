@@ -492,17 +492,19 @@ static class MenuController
 
 	private static void PerformThemeMenuAction (int button)
 	{
-		if (button == THEME_MENU_BLUE_BUTTON) 
-		{
-			SwinGame.DrawBitmap(GameResources.GameImage ("Menu"), 0, 0);
+		switch (button) {
+		case THEME_MENU_BLUE_BUTTON:
+			do {
+			GameController.HandleUserInput ();
+			GameController.DrawScreen ();
+		} while (!(SwinGame.WindowCloseRequested () == true | GameController.CurrentState == GameState.Quitting));
+			break;
 
-		}      
-		
-			else if (button == THEME_MENU_GREY_BUTTON) 
-		{
-
-			SwinGame.DrawBitmap(GameResources.GameImage ("Menu2"), 0, 0);
+		case THEME_MENU_GREY_BUTTON:
+			do {
+			GameController.HandleUserInput ();
+			GameController.DrawScreen2 ();
+		} while (!(SwinGame.WindowCloseRequested () == true | GameController.CurrentState == GameState.Quitting));
+			break;
 		}
-
-		GameController.EndCurrentState ();
 	}}
