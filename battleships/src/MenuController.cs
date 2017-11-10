@@ -110,8 +110,8 @@ static class MenuController
 
 	private const int GAME_MENU_RETURN_BUTTON = 0;
 	private const int GAME_MENU_SURRENDER_BUTTON = 1;
-
 	private const int GAME_MENU_QUIT_BUTTON = 2;
+
 	private static readonly Color MENU_COLOR = SwinGame.RGBAColor (2, 167, 252, 255);
 
 	private static readonly Color HIGHLIGHT_COLOR = SwinGame.RGBAColor (1, 57, 86, 255);
@@ -154,7 +154,8 @@ static class MenuController
 
 		if (!handled) {
 			HandleMenuInput (MAIN_MENU, 0, 0);
-		}	}
+		}
+	}
 
 	public static void HandleInstructionMenuInput ()
 	{
@@ -257,7 +258,8 @@ static class MenuController
 	public static void ThemeSettings ()
 	{
 		DrawButtons (MAIN_MENU);
-		DrawButtons (THEME_MENU, 1, 1);	}
+		DrawButtons (THEME_MENU, 1, 1);
+	}
 
 	//INSTRUCTION FUNCTION
 	public static void InstructionSettings ()
@@ -461,12 +463,12 @@ static class MenuController
 			break;
 		case GAME_MENU_SURRENDER_BUTTON:
 			GameController.EndCurrentState ();
-			//end game menu
 			GameController.EndCurrentState ();
-			//end game
 			break;
 		case GAME_MENU_QUIT_BUTTON:
-			GameController.AddNewState (GameState.Quitting);
+			GameController.EndCurrentState ();
+			GameController.EndCurrentState ();
+			GameController.EndCurrentState ();
 			break;
 		}
 	}
@@ -507,4 +509,5 @@ static class MenuController
 		} while (!(SwinGame.WindowCloseRequested () == true | GameController.CurrentState == GameState.Quitting));
 			break;
 		}
-	}}
+	}
+}

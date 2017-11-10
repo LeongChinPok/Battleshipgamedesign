@@ -19,6 +19,12 @@ static class DiscoveryController
 	/// Escape opens the game menu. Clicking the mouse will
 	/// GameController.Attack a location.
 	/// </remarks>
+
+	private const int CANCEL_BUTTON_LEFT = 700;
+	private const int CANCEL_BUTTON_TOP = 550;
+	private const int CANCEL_BUTTON_WIDTH = 80;
+	private const int CANCEL_BUTTON_HEIGHT = 50;
+
 	public static void HandleDiscoveryInput ()
 	{
 		if (SwinGame.KeyTyped (KeyCode.vk_ESCAPE)) {
@@ -27,6 +33,11 @@ static class DiscoveryController
 
 		if (SwinGame.MouseClicked (MouseButton.LeftButton)) {
 			DoAttack ();
+		}
+
+		if (SwinGame.MouseClicked (MouseButton.LeftButton)) {
+			if (UtilityFunctions.IsMouseInRectangle (CANCEL_BUTTON_LEFT, CANCEL_BUTTON_TOP, CANCEL_BUTTON_WIDTH, CANCEL_BUTTON_HEIGHT))
+				GameController.AddNewState (GameState.ViewingGameMenu);
 		}
 	}
 
@@ -70,6 +81,7 @@ static class DiscoveryController
 
 		UtilityFunctions.DrawSmallField (GameController.HumanPlayer.PlayerGrid, GameController.HumanPlayer);
 		UtilityFunctions.DrawMessage ();
+		SwinGame.DrawBitmap (GameResources.GameImage ("CancelButton"), CANCEL_BUTTON_LEFT, CANCEL_BUTTON_TOP);
 
 		SwinGame.DrawText (GameController.HumanPlayer.Shots.ToString (), Color.White, GameResources.GameFont ("Menu"), SCORES_LEFT, SHOTS_TOP);
 		SwinGame.DrawText (GameController.HumanPlayer.Hits.ToString (), Color.White, GameResources.GameFont ("Menu"), SCORES_LEFT, HITS_TOP);
