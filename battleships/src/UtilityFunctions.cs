@@ -262,27 +262,29 @@ static class UtilityFunctions
 	{
 		switch (GameController.CurrentState) {
 		case GameState.ViewingMainMenu:
-			SwinGame.DrawBitmap (GameResources.GameImage ("Menu"), 0, 0);
+			SwinGame.DrawBitmap (GameResources.GameImage ("Menu2"), 0, 0);
 			break;
 		case GameState.ViewingGameMenu:
 		case GameState.AlteringSettings:
 		case GameState.ViewingHighScores:
+			SwinGame.DrawBitmap (GameResources.GameImage ("Menu2"), 0, 0);
+			break;
 		//MUTE FUNCTION
 		case GameState.MusicSettings:
-			SwinGame.DrawBitmap (GameResources.GameImage ("Menu"), 0, 0);
+			SwinGame.DrawBitmap (GameResources.GameImage ("Menu2"), 0, 0);
 			break;
 		case GameState.ViewInstruction:
-			SwinGame.DrawBitmap (GameResources.GameImage ("Instruction"), 0, 0);
+			SwinGame.DrawBitmap (GameResources.GameImage ("Instruction2"), 0, 0);
 			break;
 		case GameState.ChangeTheme:
-			SwinGame.DrawBitmap (GameResources.GameImage ("Menu"), 0, 0);
+			SwinGame.DrawBitmap (GameResources.GameImage ("Menu2"), 0, 0);
 			break;
 		case GameState.Discovering:
 		case GameState.EndingGame:
-			SwinGame.DrawBitmap (GameResources.GameImage ("Discovery"), 0, 0);
+			SwinGame.DrawBitmap (GameResources.GameImage ("Discovery2"), 0, 0);
 			break;
 		case GameState.Deploying:
-			SwinGame.DrawBitmap (GameResources.GameImage ("Deploy"), 0, 0);
+			SwinGame.DrawBitmap (GameResources.GameImage ("Deploy2"), 0, 0);
 			break;
 		default:
 			SwinGame.ClearScreen ();
@@ -377,7 +379,7 @@ static class UtilityFunctions
 		int i = 0;
 		for (i = 1; i <= ANIMATION_CELLS * FRAMES_PER_CELL; i++) {
 			UpdateAnimations ();
-			GameController.DrawScreen ();
+			GameController.DrawScreen2 ();
 		}
 	}
 }
