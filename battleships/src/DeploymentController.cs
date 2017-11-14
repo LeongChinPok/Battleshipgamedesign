@@ -82,6 +82,11 @@ static class DeploymentController
 		}
 	}
 
+	public static Direction c_Direction
+	{
+		get { return _currentDirection;}
+	}
+
 	/// <summary>
 	/// The user has clicked somewhere on the screen, check if its is a deployment and deploy
 	/// the current ship if that is the case.

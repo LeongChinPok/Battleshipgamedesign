@@ -112,6 +112,8 @@ static class MenuController
 	private const int GAME_MENU_SURRENDER_BUTTON = 1;
 	private const int GAME_MENU_QUIT_BUTTON = 2;
 
+	private static bool music = true;
+
 	private static readonly Color MENU_COLOR = SwinGame.RGBAColor (2, 167, 252, 255);
 
 	private static readonly Color HIGHLIGHT_COLOR = SwinGame.RGBAColor (1, 57, 86, 255);
@@ -474,22 +476,30 @@ static class MenuController
 	}
 
 	//MUTE FUNCTION
-	private static void PerformMusicMenuAction(int button)
+	internal static void PerformMusicMenuAction(int button)
 	{
 		if (button == MUSIC_MENU_BGM1_BUTTON) 
 		{
 			SwinGame.PlayMusic (GameResources.GameMusic ("Background"));
+			music = true; 
 		} 
 		else if (button == MUSIC_MENU_BGM2_BUTTON) 
 		{
 			SwinGame.PlayMusic (GameResources.GameMusic ("Electronic"));
+			music = true; 
 		} 
 		else if (button == MUSIC_MENU_MUTE_BUTTON)
 		{
 			SwinGame.StopMusic();
+			music = false; 
 		}
 
 		GameController.EndCurrentState ();
+	}
+
+	//TEST
+	public static bool getMusic {
+		get { return music; }
 	}
 
 	private static void PerformThemeMenuAction (int button)

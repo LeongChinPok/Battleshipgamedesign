@@ -447,5 +447,4 @@ public static class GameController
 	{
 		_aiSetting = setting;
 	}
-
 }
